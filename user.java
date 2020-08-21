@@ -17,12 +17,14 @@ public class User {
     this.lastName=lastName;
      try{
           MessageDigest md=MessageDigest.getInstance("MD5")
+          this.pinhash=md.digest(pin.getBytes());
      }
       catch (NoSuchAlgorithmExeption e) {
       Sytem.err.println("error, caught NoSuchAlgorithmExeption");
       e.printStackTrace();
       System.exit(1);
       }
+    this.uuid=theBank.getNewUserUUID();
   }
   
 }
