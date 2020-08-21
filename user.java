@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.security.MessageDigest;
 
 public class User {
   private String firstName;
@@ -9,5 +10,20 @@ public class User {
   private byte pinHash[];
   /* The list of accounts for this user.*/
   private ArrayList<Account> accounts;
+  /* Constructor */
+  public User(String firstName, String lastName, String pin, Bank the bank ){
+   // set user's name
+    this.firstName=firstName;
+    this.lastName=lastName;
+     try{
+          MessageDigest md=MessageDigest.getInstance("MD5")
+     }
+      catch (NoSuchAlgorithmExeption e) {
+      Sytem.err.println("error, caught NoSuchAlgorithmExeption");
+      e.printStackTrace();
+      System.exit(1);
+      }
+  }
+  
 }
 
